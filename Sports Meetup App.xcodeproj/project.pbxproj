@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		605E97912CDABD65006C5D6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97902CDABD65006C5D6E /* ViewController.swift */; };
-		605E97962CDABDC2006C5D6E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97952CDABDC2006C5D6E /* HomeViewController.swift */; };
-		605E97982CDABDCA006C5D6E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97972CDABDCA006C5D6E /* HomeView.swift */; };
 		605E979A2CDABDD6006C5D6E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97992CDABDD6006C5D6E /* LoginViewController.swift */; };
 		605E979C2CDABDE6006C5D6E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E979B2CDABDE6006C5D6E /* LoginView.swift */; };
 		605E979F2CDAE677006C5D6E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 605E979E2CDAE677006C5D6E /* FirebaseAuth */; };
@@ -21,6 +19,11 @@
 		605E97AD2CDAE827006C5D6E /* ProgressSpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97AC2CDAE827006C5D6E /* ProgressSpinnerViewController.swift */; };
 		605E97AF2CDAE837006C5D6E /* ProgressSpinnerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97AE2CDAE837006C5D6E /* ProgressSpinnerDelegate.swift */; };
 		605E97B32CDAEA7B006C5D6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 605E97B22CDAEA7B006C5D6E /* GoogleService-Info.plist */; };
+		60A4DAFE2CDBFC87007A897E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DAFD2CDBFC87007A897E /* ProfileViewController.swift */; };
+		60A4DB002CDBFCA2007A897E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DAFF2CDBFCA2007A897E /* ProfileView.swift */; };
+		60A4DB032CDBFCEF007A897E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB022CDBFCEF007A897E /* ChatView.swift */; };
+		60A4DB052CDBFD02007A897E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB042CDBFD02007A897E /* ChatViewController.swift */; };
+		60A4DB0D2CDC0C7C007A897E /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */; };
 		60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F32CC94EC800D4A616 /* AppDelegate.swift */; };
 		60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F52CC94EC800D4A616 /* SceneDelegate.swift */; };
 		60E187FB2CC94EC800D4A616 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 60E187FA2CC94EC800D4A616 /* Base */; };
@@ -30,8 +33,6 @@
 
 /* Begin PBXFileReference section */
 		605E97902CDABD65006C5D6E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		605E97952CDABDC2006C5D6E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		605E97972CDABDCA006C5D6E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		605E97992CDABDD6006C5D6E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		605E979B2CDABDE6006C5D6E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		605E97A42CDAE724006C5D6E /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
@@ -40,6 +41,11 @@
 		605E97AC2CDAE827006C5D6E /* ProgressSpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerViewController.swift; sourceTree = "<group>"; };
 		605E97AE2CDAE837006C5D6E /* ProgressSpinnerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerDelegate.swift; sourceTree = "<group>"; };
 		605E97B22CDAEA7B006C5D6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		60A4DAFD2CDBFC87007A897E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		60A4DAFF2CDBFCA2007A897E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		60A4DB022CDBFCEF007A897E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		60A4DB042CDBFD02007A897E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		60E187F02CC94EC800D4A616 /* Sports Meetup App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Meetup App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E187F32CC94EC800D4A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E187F52CC94EC800D4A616 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,10 +72,9 @@
 		605E978F2CDABD52006C5D6E /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
-				605E97972CDABDCA006C5D6E /* HomeView.swift */,
-				605E97952CDABDC2006C5D6E /* HomeViewController.swift */,
 				605E97902CDABD65006C5D6E /* ViewController.swift */,
 				605E97A42CDAE724006C5D6E /* MainScreenView.swift */,
+				60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */,
 			);
 			path = "Main Screen";
 			sourceTree = "<group>";
@@ -101,6 +106,24 @@
 			path = "Progress Indicator";
 			sourceTree = "<group>";
 		};
+		60A4DAFC2CDBFC72007A897E /* Profile Screen */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DAFD2CDBFC87007A897E /* ProfileViewController.swift */,
+				60A4DAFF2CDBFCA2007A897E /* ProfileView.swift */,
+			);
+			path = "Profile Screen";
+			sourceTree = "<group>";
+		};
+		60A4DB012CDBFCB8007A897E /* Chat Screen */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB022CDBFCEF007A897E /* ChatView.swift */,
+				60A4DB042CDBFD02007A897E /* ChatViewController.swift */,
+			);
+			path = "Chat Screen";
+			sourceTree = "<group>";
+		};
 		60E187E72CC94EC800D4A616 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +143,8 @@
 		60E187F22CC94EC800D4A616 /* Sports Meetup App */ = {
 			isa = PBXGroup;
 			children = (
+				60A4DB012CDBFCB8007A897E /* Chat Screen */,
+				60A4DAFC2CDBFC72007A897E /* Profile Screen */,
 				605E97AB2CDAE802006C5D6E /* Progress Indicator */,
 				605E97A62CDAE7B0006C5D6E /* Register Screen */,
 				605E97942CDABDAB006C5D6E /* Login Screen */,
@@ -217,15 +242,18 @@
 			files = (
 				605E97A82CDAE7C3006C5D6E /* RegisterView.swift in Sources */,
 				605E97AA2CDAE7D1006C5D6E /* RegisterViewController.swift in Sources */,
+				60A4DB052CDBFD02007A897E /* ChatViewController.swift in Sources */,
 				605E979A2CDABDD6006C5D6E /* LoginViewController.swift in Sources */,
-				605E97962CDABDC2006C5D6E /* HomeViewController.swift in Sources */,
 				605E97912CDABD65006C5D6E /* ViewController.swift in Sources */,
+				60A4DB0D2CDC0C7C007A897E /* MainScreenViewController.swift in Sources */,
 				60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */,
-				605E97982CDABDCA006C5D6E /* HomeView.swift in Sources */,
+				60A4DB032CDBFCEF007A897E /* ChatView.swift in Sources */,
 				605E97AF2CDAE837006C5D6E /* ProgressSpinnerDelegate.swift in Sources */,
 				605E97AD2CDAE827006C5D6E /* ProgressSpinnerViewController.swift in Sources */,
 				60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */,
+				60A4DAFE2CDBFC87007A897E /* ProfileViewController.swift in Sources */,
 				605E979C2CDABDE6006C5D6E /* LoginView.swift in Sources */,
+				60A4DB002CDBFCA2007A897E /* ProfileView.swift in Sources */,
 				605E97A52CDAE724006C5D6E /* MainScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

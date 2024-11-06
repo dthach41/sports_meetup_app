@@ -61,6 +61,7 @@ class RegisterView: UIView {
         textFieldName.borderStyle = .roundedRect
         textFieldName.layer.borderWidth = 1
         textFieldName.autocapitalizationType = .none
+        textFieldName.autocorrectionType = .no
         textFieldName.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldName)
     }
@@ -78,6 +79,7 @@ class RegisterView: UIView {
         textFieldEmail.borderStyle = .roundedRect
         textFieldEmail.layer.borderWidth = 1
         textFieldEmail.autocapitalizationType = .none
+        textFieldEmail.autocorrectionType = .no
         textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldEmail)
     }

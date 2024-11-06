@@ -12,6 +12,8 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     let loginScreen = LoginView()
     
+    let childProgressView = ProgressSpinnerViewController()
+    
     override func loadView() {
         view = loginScreen
     }
@@ -40,12 +42,13 @@ class LoginViewController: UIViewController {
     }
     
     @objc func onButtonLoginClicked() {
+        self.showActivityIndicator()
         let email = loginScreen.textFieldEmail.text!
         let password = loginScreen.textFieldPassword.text!
         Auth.auth().signIn(withEmail: email, password: password, completion: {(result, error) in
             if error == nil{
                 self.navigationController?.popViewController(animated: true)
-                print("sucess")
+                self.hideActivityIndicator()
             }else{
                 print(error)
             }
@@ -57,3 +60,19 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(registerViewController, animated: true)
     }
 }
+
+
+extension LoginViewController:ProgressSpinnerDelegate{
+    func showActivityIndicator(){
+        addChild(childProgressView)
+        view.addSubview(childProgressView.view)
+        childProgressView.didMove(toParent: self)
+    }
+    
+    func hideActivityIndicator(){
+        childProgressView.willMove(toParent: nil)
+        childProgressView.view.removeFromSuperview()
+        childProgressView.removeFromParent()
+    }
+}
+

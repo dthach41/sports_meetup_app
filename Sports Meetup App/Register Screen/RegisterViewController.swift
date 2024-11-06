@@ -105,6 +105,7 @@ class RegisterViewController: UIViewController {
                     }
                 } else {
                     self.showAccountAlreadyExists()
+                    self.hideActivityIndicator()
                 }
             })
         }

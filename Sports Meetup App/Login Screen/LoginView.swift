@@ -54,7 +54,7 @@ class LoginView: UIView {
     
     func setuplabelEmail() {
         labelEmail = UILabel()
-        labelEmail.text = "Username:"
+        labelEmail.text = "Email:"
         labelEmail.font = .systemFont(ofSize: 24)
         labelEmail.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(labelEmail)
@@ -64,6 +64,8 @@ class LoginView: UIView {
         textFieldEmail = UITextField()
         textFieldEmail.borderStyle = .roundedRect
         textFieldEmail.layer.borderWidth = 1
+        textFieldEmail.autocapitalizationType = .none
+        textFieldEmail.autocorrectionType = .no
         textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(textFieldEmail)
     }
@@ -80,6 +82,7 @@ class LoginView: UIView {
         textFieldPassword = UITextField()
         textFieldPassword.borderStyle = .roundedRect
         textFieldPassword.layer.borderWidth = 1
+        textFieldPassword.isSecureTextEntry = true
         textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
         contentWrapper.addSubview(textFieldPassword)
     }
