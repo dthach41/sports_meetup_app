@@ -12,6 +12,8 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     let loginScreen = LoginView()
     
+    let defaults = UserDefaults.standard
+    
     let childProgressView = ProgressSpinnerViewController()
     
     override func loadView() {
@@ -28,7 +30,7 @@ class LoginViewController: UIViewController {
     }
     
     func showUserNotFound() {
-        let alert = UIAlertController(title: "", message: "User not found", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "User not found / Inccorect credentials", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alert, animated: true)
@@ -48,9 +50,12 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password, completion: {(result, error) in
             if error == nil{
                 self.navigationController?.popViewController(animated: true)
+                let userid = result!.user.uid
+                self.defaults.set(userid, forKey: "userID")
                 self.hideActivityIndicator()
-            }else{
-                print(error)
+            } else{
+                self.showUserNotFound()
+                self.hideActivityIndicator()
             }
         })
     }

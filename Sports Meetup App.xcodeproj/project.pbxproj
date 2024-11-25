@@ -24,6 +24,14 @@
 		60A4DB032CDBFCEF007A897E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB022CDBFCEF007A897E /* ChatView.swift */; };
 		60A4DB052CDBFD02007A897E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB042CDBFD02007A897E /* ChatViewController.swift */; };
 		60A4DB0D2CDC0C7C007A897E /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */; };
+		60A4DB102CED2EF7007A897E /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB0F2CED2EF7007A897E /* NewEventViewController.swift */; };
+		60A4DB122CED2F05007A897E /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB112CED2F05007A897E /* NewEventView.swift */; };
+		60A4DB152CED30B0007A897E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB142CED30B0007A897E /* Event.swift */; };
+		60A4DB1C2CF290D8007A897E /* TableViewEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB1B2CF290D8007A897E /* TableViewEventCell.swift */; };
+		60A4DB1E2CF29776007A897E /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB1D2CF29776007A897E /* NotificationNames.swift */; };
+		60A4DB212CF2E39A007A897E /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB202CF2E39A007A897E /* EventDetailsView.swift */; };
+		60A4DB242CF2E3C6007A897E /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB232CF2E3C6007A897E /* EventDetailsViewController.swift */; };
+		60A4DB262CF2FD0C007A897E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB252CF2FD0C007A897E /* User.swift */; };
 		60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F32CC94EC800D4A616 /* AppDelegate.swift */; };
 		60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F52CC94EC800D4A616 /* SceneDelegate.swift */; };
 		60E187FB2CC94EC800D4A616 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 60E187FA2CC94EC800D4A616 /* Base */; };
@@ -46,6 +54,14 @@
 		60A4DB022CDBFCEF007A897E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		60A4DB042CDBFD02007A897E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		60A4DB0F2CED2EF7007A897E /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		60A4DB112CED2F05007A897E /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
+		60A4DB142CED30B0007A897E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		60A4DB1B2CF290D8007A897E /* TableViewEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEventCell.swift; sourceTree = "<group>"; };
+		60A4DB1D2CF29776007A897E /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
+		60A4DB202CF2E39A007A897E /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
+		60A4DB232CF2E3C6007A897E /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		60A4DB252CF2FD0C007A897E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60E187F02CC94EC800D4A616 /* Sports Meetup App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Meetup App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E187F32CC94EC800D4A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E187F52CC94EC800D4A616 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,9 +88,11 @@
 		605E978F2CDABD52006C5D6E /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
+				60A4DB1F2CF2E371007A897E /* Event Details Screen */,
 				605E97902CDABD65006C5D6E /* ViewController.swift */,
 				605E97A42CDAE724006C5D6E /* MainScreenView.swift */,
 				60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */,
+				60A4DB1B2CF290D8007A897E /* TableViewEventCell.swift */,
 			);
 			path = "Main Screen";
 			sourceTree = "<group>";
@@ -124,6 +142,33 @@
 			path = "Chat Screen";
 			sourceTree = "<group>";
 		};
+		60A4DB0E2CED2EC8007A897E /* New Event Screen */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB112CED2F05007A897E /* NewEventView.swift */,
+				60A4DB0F2CED2EF7007A897E /* NewEventViewController.swift */,
+			);
+			path = "New Event Screen";
+			sourceTree = "<group>";
+		};
+		60A4DB132CED3087007A897E /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB142CED30B0007A897E /* Event.swift */,
+				60A4DB252CF2FD0C007A897E /* User.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		60A4DB1F2CF2E371007A897E /* Event Details Screen */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB202CF2E39A007A897E /* EventDetailsView.swift */,
+				60A4DB232CF2E3C6007A897E /* EventDetailsViewController.swift */,
+			);
+			path = "Event Details Screen";
+			sourceTree = "<group>";
+		};
 		60E187E72CC94EC800D4A616 = {
 			isa = PBXGroup;
 			children = (
@@ -143,12 +188,15 @@
 		60E187F22CC94EC800D4A616 /* Sports Meetup App */ = {
 			isa = PBXGroup;
 			children = (
+				60A4DB1D2CF29776007A897E /* NotificationNames.swift */,
+				60A4DB132CED3087007A897E /* Data Models */,
 				60A4DB012CDBFCB8007A897E /* Chat Screen */,
 				60A4DAFC2CDBFC72007A897E /* Profile Screen */,
 				605E97AB2CDAE802006C5D6E /* Progress Indicator */,
 				605E97A62CDAE7B0006C5D6E /* Register Screen */,
 				605E97942CDABDAB006C5D6E /* Login Screen */,
 				605E978F2CDABD52006C5D6E /* Main Screen */,
+				60A4DB0E2CED2EC8007A897E /* New Event Screen */,
 				60E187F32CC94EC800D4A616 /* AppDelegate.swift */,
 				60E187F52CC94EC800D4A616 /* SceneDelegate.swift */,
 				60E187F92CC94EC800D4A616 /* Main.storyboard */,
@@ -242,19 +290,27 @@
 			files = (
 				605E97A82CDAE7C3006C5D6E /* RegisterView.swift in Sources */,
 				605E97AA2CDAE7D1006C5D6E /* RegisterViewController.swift in Sources */,
+				60A4DB102CED2EF7007A897E /* NewEventViewController.swift in Sources */,
 				60A4DB052CDBFD02007A897E /* ChatViewController.swift in Sources */,
 				605E979A2CDABDD6006C5D6E /* LoginViewController.swift in Sources */,
 				605E97912CDABD65006C5D6E /* ViewController.swift in Sources */,
 				60A4DB0D2CDC0C7C007A897E /* MainScreenViewController.swift in Sources */,
+				60A4DB122CED2F05007A897E /* NewEventView.swift in Sources */,
 				60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */,
 				60A4DB032CDBFCEF007A897E /* ChatView.swift in Sources */,
+				60A4DB152CED30B0007A897E /* Event.swift in Sources */,
 				605E97AF2CDAE837006C5D6E /* ProgressSpinnerDelegate.swift in Sources */,
 				605E97AD2CDAE827006C5D6E /* ProgressSpinnerViewController.swift in Sources */,
+				60A4DB212CF2E39A007A897E /* EventDetailsView.swift in Sources */,
 				60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */,
 				60A4DAFE2CDBFC87007A897E /* ProfileViewController.swift in Sources */,
+				60A4DB1C2CF290D8007A897E /* TableViewEventCell.swift in Sources */,
 				605E979C2CDABDE6006C5D6E /* LoginView.swift in Sources */,
+				60A4DB1E2CF29776007A897E /* NotificationNames.swift in Sources */,
 				60A4DB002CDBFCA2007A897E /* ProfileView.swift in Sources */,
+				60A4DB242CF2E3C6007A897E /* EventDetailsViewController.swift in Sources */,
 				605E97A52CDAE724006C5D6E /* MainScreenView.swift in Sources */,
+				60A4DB262CF2FD0C007A897E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

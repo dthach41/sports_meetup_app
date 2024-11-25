@@ -12,6 +12,8 @@ class ProfileViewController: UIViewController {
     
     let profileScreen = ProfileView()
     
+    let defaults = UserDefaults.standard
+    
     
     override func loadView() {
         view = profileScreen
@@ -26,13 +28,14 @@ class ProfileViewController: UIViewController {
             target: self,
             action: #selector(onClickLogoutBarItem))
         
-        self.navigationItem.rightBarButtonItem = logoutBarButton
+        self.navigationItem.leftBarButtonItem = logoutBarButton
     }
     
     @objc func onClickLogoutBarItem() {
         let logoutAlert = UIAlertController(title: "Logging out!", message: "Are you sure want to log out?", preferredStyle: .actionSheet)
         logoutAlert.addAction(UIAlertAction(title: "Yes, log out!", style: .default, handler: {(_) in
                 do{
+                    self.defaults.setValue(nil, forKey: "userID")
                     try Auth.auth().signOut()
                 }catch{
                     print("Error occured!")
