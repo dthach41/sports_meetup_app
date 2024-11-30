@@ -38,8 +38,7 @@ class ChatListViewController: UIViewController {
             }else{
                 self.currentUser = user
                 
-                self.mainScreen.buttonLogout.addTarget(self, action: #selector(self.onSignOutClicked), for: .touchUpInside)
-                self.mainScreen.buttonNewMessage.addTarget(self, action: #selector(self.onNewMessageButtonClicked), for: .touchUpInside)
+                self.chatListView.buttonNewMessage.addTarget(self, action: #selector(self.onNewMessageButtonClicked), for: .touchUpInside)
 
                 self.database.collection("chats")
                     .whereField("participants", arrayContains: self.currentUser?.uid)
@@ -65,17 +64,17 @@ class ChatListViewController: UIViewController {
                                     return true
                                 }
                             })
-                            self.mainScreen.tableViewChatRooms.reloadData()
+                            self.chatListView.tableViewChatRooms.reloadData()
                         }
                     })
             }
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handleAuth!)
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        Auth.auth().removeStateDidChangeListener(handleAuth!)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

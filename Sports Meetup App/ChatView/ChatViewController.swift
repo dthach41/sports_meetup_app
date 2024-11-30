@@ -31,7 +31,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = otherUser.displayName
+        title = otherUser.name
 
         chatView.buttonSend.addTarget(self, action: #selector(onButtonSendTapped), for: .touchUpInside)
         
@@ -56,7 +56,7 @@ class ChatViewController: UIViewController {
     
     func loadMessages() {
         let currentUserID = currentUser.uid
-        if let otherUserID = otherUser.uid {
+        if let otherUserID = otherUser.id {
             database.collection("chats")
                 .document(getChatIDForUsers(userIds: [currentUserID, otherUserID]))
                 .collection("messages")
@@ -81,7 +81,7 @@ class ChatViewController: UIViewController {
     
     func addMessageToFirestore(message: Message) {
         let currentUserID = currentUser.uid
-        if let otherUserID = otherUser.uid {
+        if let otherUserID = otherUser.id {
             let collectionMessages = database
                 .collection("chats")
                 .document(getChatIDForUsers(userIds: [currentUserID, otherUserID]))
@@ -108,7 +108,7 @@ class ChatViewController: UIViewController {
         ]
         
         let currentUserID = currentUser.uid
-        if let otherUserID = otherUser.uid {
+        if let otherUserID = otherUser.id {
             database.collection("chats")
                 .document(getChatIDForUsers(userIds: [currentUserID, otherUserID]))
                 .updateData(lastMessageData) { error in

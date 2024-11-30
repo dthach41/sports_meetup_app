@@ -24,7 +24,7 @@ extension NewMessageViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedUser = users[indexPath.row]
-        if let selectedUserUID = selectedUser.uid {
+        if let selectedUserUID = selectedUser.id {
             let chatID = getChatIDForUsers(userIds: [self.currentUser.uid, selectedUserUID])
             self.database
                 .collection("chats")

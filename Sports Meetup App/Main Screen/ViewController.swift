@@ -36,7 +36,7 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
                 self.currentUser = user
                 
                 //MARK: setting up chat tab bar...
-                let tabChat = UINavigationController(rootViewController: ChatViewController())
+                let tabChat = UINavigationController(rootViewController: ChatListViewController())
                 let tabChatBarItem = UITabBarItem(
                     title: "Chat",
                     image: UIImage(systemName: "bubble.circle")?.withRenderingMode(.alwaysOriginal),

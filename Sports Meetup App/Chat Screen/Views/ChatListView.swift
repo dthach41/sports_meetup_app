@@ -7,17 +7,51 @@
 
 import UIKit
 
-class ChatListView: UITableViewCell {
+class ChatListView: UIView {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var buttonNewMessage: UIButton!
+    var tableViewChatRooms: UITableView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .white
+        
+        setupButtonNewMessage()
+        setupTableViewChatRooms()
+        
+        initConstraints()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func setupButtonNewMessage() {
+        buttonNewMessage = UIButton(type: .system)
+        buttonNewMessage.setImage(UIImage(systemName: "bubble"), for: .normal)
+        buttonNewMessage.contentHorizontalAlignment = .fill
+        buttonNewMessage.contentVerticalAlignment = .fill
+        buttonNewMessage.imageView?.contentMode = .scaleAspectFit
+        buttonNewMessage.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonNewMessage)
     }
-
+    
+    func setupTableViewChatRooms() {
+        tableViewChatRooms = UITableView()
+        tableViewChatRooms.register(ChatTableViewCell.self, forCellReuseIdentifier: Configs.tableViewChatsID)
+        tableViewChatRooms.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(tableViewChatRooms)
+    }
+        
+    func initConstraints() {
+        NSLayoutConstraint.activate([
+            buttonNewMessage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
+            buttonNewMessage.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+            
+            tableViewChatRooms.topAnchor.constraint(equalTo: buttonNewMessage.bottomAnchor, constant: 10),
+            tableViewChatRooms.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            tableViewChatRooms.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            tableViewChatRooms.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10)
+        ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

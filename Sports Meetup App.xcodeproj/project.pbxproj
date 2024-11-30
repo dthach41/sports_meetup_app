@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32E7EA522CFA9DD10000479A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA4A2CFA9DD10000479A /* ChatView.swift */; };
+		32E7EA532CFA9DD10000479A /* SenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA4B2CFA9DD10000479A /* SenderTableViewCell.swift */; };
+		32E7EA542CFA9DD10000479A /* ChatProgressIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA502CFA9DD10000479A /* ChatProgressIndicatorManager.swift */; };
+		32E7EA552CFA9DD10000479A /* ChatTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA4F2CFA9DD10000479A /* ChatTableViewManager.swift */; };
+		32E7EA562CFA9DD10000479A /* ReceiverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA4C2CFA9DD10000479A /* ReceiverTableViewCell.swift */; };
+		32E7EA572CFA9DD10000479A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA4E2CFA9DD10000479A /* ChatViewController.swift */; };
+		32E7EA5E2CFA9DDA0000479A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA592CFA9DDA0000479A /* SearchTableViewCell.swift */; };
+		32E7EA5F2CFA9DDA0000479A /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA5B2CFA9DDA0000479A /* NewMessageViewController.swift */; };
+		32E7EA602CFA9DDA0000479A /* NewMessageTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA5C2CFA9DDA0000479A /* NewMessageTableViewManager.swift */; };
+		32E7EA612CFA9DDA0000479A /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA582CFA9DDA0000479A /* NewMessageView.swift */; };
+		32E7EA632CFA9DE00000479A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA622CFA9DDF0000479A /* Chat.swift */; };
+		32E7EA652CFA9DE30000479A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA642CFA9DE30000479A /* Message.swift */; };
+		32E7EA682CFA9ED80000479A /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA672CFA9ED80000479A /* ChatTableViewCell.swift */; };
+		32E7EA6C2CFA9FDD0000479A /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA6B2CFA9FDA0000479A /* Configs.swift */; };
+		32E7EA6E2CFAA0370000479A /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA6D2CFAA0370000479A /* ChatListView.swift */; };
+		32E7EA702CFAA0B20000479A /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA6F2CFAA0B20000479A /* ChatListViewController.swift */; };
+		32E7EA722CFAA32A0000479A /* ChatListTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7EA712CFAA3240000479A /* ChatListTableViewManager.swift */; };
 		605E97912CDABD65006C5D6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97902CDABD65006C5D6E /* ViewController.swift */; };
 		605E979A2CDABDD6006C5D6E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E97992CDABDD6006C5D6E /* LoginViewController.swift */; };
 		605E979C2CDABDE6006C5D6E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605E979B2CDABDE6006C5D6E /* LoginView.swift */; };
@@ -21,8 +38,6 @@
 		605E97B32CDAEA7B006C5D6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 605E97B22CDAEA7B006C5D6E /* GoogleService-Info.plist */; };
 		60A4DAFE2CDBFC87007A897E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DAFD2CDBFC87007A897E /* ProfileViewController.swift */; };
 		60A4DB002CDBFCA2007A897E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DAFF2CDBFCA2007A897E /* ProfileView.swift */; };
-		60A4DB032CDBFCEF007A897E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB022CDBFCEF007A897E /* ChatView.swift */; };
-		60A4DB052CDBFD02007A897E /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB042CDBFD02007A897E /* ChatViewController.swift */; };
 		60A4DB0D2CDC0C7C007A897E /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */; };
 		60A4DB102CED2EF7007A897E /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB0F2CED2EF7007A897E /* NewEventViewController.swift */; };
 		60A4DB122CED2F05007A897E /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB112CED2F05007A897E /* NewEventView.swift */; };
@@ -40,6 +55,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32E7EA4A2CFA9DD10000479A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		32E7EA4B2CFA9DD10000479A /* SenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderTableViewCell.swift; sourceTree = "<group>"; };
+		32E7EA4C2CFA9DD10000479A /* ReceiverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverTableViewCell.swift; sourceTree = "<group>"; };
+		32E7EA4E2CFA9DD10000479A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		32E7EA4F2CFA9DD10000479A /* ChatTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewManager.swift; sourceTree = "<group>"; };
+		32E7EA502CFA9DD10000479A /* ChatProgressIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProgressIndicatorManager.swift; sourceTree = "<group>"; };
+		32E7EA582CFA9DDA0000479A /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		32E7EA592CFA9DDA0000479A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		32E7EA5B2CFA9DDA0000479A /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		32E7EA5C2CFA9DDA0000479A /* NewMessageTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageTableViewManager.swift; sourceTree = "<group>"; };
+		32E7EA622CFA9DDF0000479A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		32E7EA642CFA9DE30000479A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		32E7EA672CFA9ED80000479A /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		32E7EA6B2CFA9FDA0000479A /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		32E7EA6D2CFAA0370000479A /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		32E7EA6F2CFAA0B20000479A /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		32E7EA712CFAA3240000479A /* ChatListTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewManager.swift; sourceTree = "<group>"; };
 		605E97902CDABD65006C5D6E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		605E97992CDABDD6006C5D6E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		605E979B2CDABDE6006C5D6E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -51,8 +83,6 @@
 		605E97B22CDAEA7B006C5D6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60A4DAFD2CDBFC87007A897E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		60A4DAFF2CDBFCA2007A897E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		60A4DB022CDBFCEF007A897E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		60A4DB042CDBFD02007A897E /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		60A4DB0C2CDC0C7C007A897E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		60A4DB0F2CED2EF7007A897E /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		60A4DB112CED2F05007A897E /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
@@ -85,6 +115,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32E7EA4D2CFA9DD10000479A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32E7EA4A2CFA9DD10000479A /* ChatView.swift */,
+				32E7EA4B2CFA9DD10000479A /* SenderTableViewCell.swift */,
+				32E7EA4C2CFA9DD10000479A /* ReceiverTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32E7EA512CFA9DD10000479A /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				32E7EA4D2CFA9DD10000479A /* Views */,
+				32E7EA4E2CFA9DD10000479A /* ChatViewController.swift */,
+				32E7EA4F2CFA9DD10000479A /* ChatTableViewManager.swift */,
+				32E7EA502CFA9DD10000479A /* ChatProgressIndicatorManager.swift */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
+		32E7EA5A2CFA9DDA0000479A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32E7EA582CFA9DDA0000479A /* NewMessageView.swift */,
+				32E7EA592CFA9DDA0000479A /* SearchTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32E7EA5D2CFA9DDA0000479A /* New Message */ = {
+			isa = PBXGroup;
+			children = (
+				32E7EA5A2CFA9DDA0000479A /* Views */,
+				32E7EA5B2CFA9DDA0000479A /* NewMessageViewController.swift */,
+				32E7EA5C2CFA9DDA0000479A /* NewMessageTableViewManager.swift */,
+			);
+			path = "New Message";
+			sourceTree = "<group>";
+		};
+		32E7EA662CFA9EA70000479A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32E7EA6D2CFAA0370000479A /* ChatListView.swift */,
+				32E7EA672CFA9ED80000479A /* ChatTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		605E978F2CDABD52006C5D6E /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,8 +215,9 @@
 		60A4DB012CDBFCB8007A897E /* Chat Screen */ = {
 			isa = PBXGroup;
 			children = (
-				60A4DB022CDBFCEF007A897E /* ChatView.swift */,
-				60A4DB042CDBFD02007A897E /* ChatViewController.swift */,
+				32E7EA662CFA9EA70000479A /* Views */,
+				32E7EA6F2CFAA0B20000479A /* ChatListViewController.swift */,
+				32E7EA712CFAA3240000479A /* ChatListTableViewManager.swift */,
 			);
 			path = "Chat Screen";
 			sourceTree = "<group>";
@@ -154,6 +234,8 @@
 		60A4DB132CED3087007A897E /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				32E7EA642CFA9DE30000479A /* Message.swift */,
+				32E7EA622CFA9DDF0000479A /* Chat.swift */,
 				60A4DB142CED30B0007A897E /* Event.swift */,
 				60A4DB252CF2FD0C007A897E /* User.swift */,
 			);
@@ -188,8 +270,11 @@
 		60E187F22CC94EC800D4A616 /* Sports Meetup App */ = {
 			isa = PBXGroup;
 			children = (
+				32E7EA6B2CFA9FDA0000479A /* Configs.swift */,
 				60A4DB1D2CF29776007A897E /* NotificationNames.swift */,
 				60A4DB132CED3087007A897E /* Data Models */,
+				32E7EA512CFA9DD10000479A /* ChatView */,
+				32E7EA5D2CFA9DDA0000479A /* New Message */,
 				60A4DB012CDBFCB8007A897E /* Chat Screen */,
 				60A4DAFC2CDBFC72007A897E /* Profile Screen */,
 				605E97AB2CDAE802006C5D6E /* Progress Indicator */,
@@ -291,26 +376,41 @@
 				605E97A82CDAE7C3006C5D6E /* RegisterView.swift in Sources */,
 				605E97AA2CDAE7D1006C5D6E /* RegisterViewController.swift in Sources */,
 				60A4DB102CED2EF7007A897E /* NewEventViewController.swift in Sources */,
-				60A4DB052CDBFD02007A897E /* ChatViewController.swift in Sources */,
+				32E7EA722CFAA32A0000479A /* ChatListTableViewManager.swift in Sources */,
 				605E979A2CDABDD6006C5D6E /* LoginViewController.swift in Sources */,
 				605E97912CDABD65006C5D6E /* ViewController.swift in Sources */,
 				60A4DB0D2CDC0C7C007A897E /* MainScreenViewController.swift in Sources */,
 				60A4DB122CED2F05007A897E /* NewEventView.swift in Sources */,
 				60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */,
-				60A4DB032CDBFCEF007A897E /* ChatView.swift in Sources */,
+				32E7EA522CFA9DD10000479A /* ChatView.swift in Sources */,
+				32E7EA532CFA9DD10000479A /* SenderTableViewCell.swift in Sources */,
+				32E7EA542CFA9DD10000479A /* ChatProgressIndicatorManager.swift in Sources */,
+				32E7EA552CFA9DD10000479A /* ChatTableViewManager.swift in Sources */,
+				32E7EA562CFA9DD10000479A /* ReceiverTableViewCell.swift in Sources */,
+				32E7EA572CFA9DD10000479A /* ChatViewController.swift in Sources */,
 				60A4DB152CED30B0007A897E /* Event.swift in Sources */,
 				605E97AF2CDAE837006C5D6E /* ProgressSpinnerDelegate.swift in Sources */,
 				605E97AD2CDAE827006C5D6E /* ProgressSpinnerViewController.swift in Sources */,
+				32E7EA632CFA9DE00000479A /* Chat.swift in Sources */,
 				60A4DB212CF2E39A007A897E /* EventDetailsView.swift in Sources */,
+				32E7EA682CFA9ED80000479A /* ChatTableViewCell.swift in Sources */,
 				60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */,
 				60A4DAFE2CDBFC87007A897E /* ProfileViewController.swift in Sources */,
+				32E7EA702CFAA0B20000479A /* ChatListViewController.swift in Sources */,
+				32E7EA6E2CFAA0370000479A /* ChatListView.swift in Sources */,
 				60A4DB1C2CF290D8007A897E /* TableViewEventCell.swift in Sources */,
 				605E979C2CDABDE6006C5D6E /* LoginView.swift in Sources */,
 				60A4DB1E2CF29776007A897E /* NotificationNames.swift in Sources */,
+				32E7EA5E2CFA9DDA0000479A /* SearchTableViewCell.swift in Sources */,
+				32E7EA652CFA9DE30000479A /* Message.swift in Sources */,
+				32E7EA5F2CFA9DDA0000479A /* NewMessageViewController.swift in Sources */,
+				32E7EA602CFA9DDA0000479A /* NewMessageTableViewManager.swift in Sources */,
+				32E7EA612CFA9DDA0000479A /* NewMessageView.swift in Sources */,
 				60A4DB002CDBFCA2007A897E /* ProfileView.swift in Sources */,
 				60A4DB242CF2E3C6007A897E /* EventDetailsViewController.swift in Sources */,
 				605E97A52CDAE724006C5D6E /* MainScreenView.swift in Sources */,
 				60A4DB262CF2FD0C007A897E /* User.swift in Sources */,
+				32E7EA6C2CFA9FDD0000479A /* Configs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,7 +33,7 @@ class NewMessageViewController: UIViewController {
                     for document in documents {
                         do {
                             let user = try document.data(as: User.self)
-                            if user.uid != self.currentUser.uid {
+                            if user.id != self.currentUser.uid {
                                 self.users.append(user)
                                 self.userEmailsForTableView.append(user.email)
                             }
@@ -76,12 +76,12 @@ class NewMessageViewController: UIViewController {
     // adds a new chat document to chats collection
     func addChatToFirestore() {
         let chatData = [
-            "participantNames": [currentUser.displayName, otherUser.displayName],
-            "participants": [self.currentUser.uid, otherUser.uid],
+            "participantNames": [currentUser.displayName, otherUser.name],
+            "participants": [self.currentUser.uid, otherUser.id],
             "lastMessage": nil,
             "lastMessageTime": nil
         ]
-        if let otherUID = otherUser.uid {
+        if let otherUID = otherUser.id {
             let chatID = getChatIDForUsers(userIds: [self.currentUser.uid, otherUID]);
             
             database.collection("chats")
