@@ -12,7 +12,7 @@ class EventDetailsView: UIView {
     var imageIcon: UIImageView!
     var labelEventName: UILabel!
     var labelHost: UILabel!
-    var imageParticipants: UIImageView!
+    var buttonViewParticipants: UIButton!
     var labelParticipantsCount: UILabel!
     var participantsStack: UIStackView!
     var labelEventDate: UILabel!
@@ -29,7 +29,7 @@ class EventDetailsView: UIView {
         setupImageIcon()
         setupLabelEventName()
         setupLabelHost()
-        setupImageParticipants()
+        setupButtonViewParticipants()
         setupLabelParticipantsCount()
         setupParticipantsStack()
         setupLabelAddress()
@@ -64,26 +64,32 @@ class EventDetailsView: UIView {
         self.addSubview(labelHost)
     }
     
-    func setupImageParticipants() {
-        let image = UIImage(systemName: "person")
-        imageParticipants = UIImageView(image: image!)
-        imageParticipants.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(imageParticipants)
+    func setupButtonViewParticipants() {
+        buttonViewParticipants = UIButton(type: .system)
+        buttonViewParticipants.setImage(UIImage(systemName:"person"), for: .normal)
+        buttonViewParticipants.imageView?.contentMode = .scaleAspectFit
+        buttonViewParticipants.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonViewParticipants)
+        
+        buttonViewParticipants.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            buttonViewParticipants.imageView!.widthAnchor.constraint(equalToConstant: 30),  // Larger image size inside the button
+            buttonViewParticipants.imageView!.heightAnchor.constraint(equalToConstant: 30)  // Larger image size inside the button
+        ])
     }
+
     
     func setupLabelParticipantsCount() {
         labelParticipantsCount = UILabel()
-        labelParticipantsCount.font = .boldSystemFont(ofSize: 18)
+        labelParticipantsCount.font = .boldSystemFont(ofSize: 22)
         labelParticipantsCount.text = "Participants: 0"
         labelParticipantsCount.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelParticipantsCount)
     }
     
     func setupParticipantsStack() {
-        participantsStack = UIStackView(arrangedSubviews: [imageParticipants, labelParticipantsCount])
+        participantsStack = UIStackView(arrangedSubviews: [buttonViewParticipants, labelParticipantsCount])
         
-        imageParticipants.widthAnchor.constraint(equalToConstant: 25)
-        imageParticipants.heightAnchor.constraint(equalToConstant: 25)
         participantsStack.translatesAutoresizingMaskIntoConstraints = false
         participantsStack.axis = .horizontal
         participantsStack.spacing = 6 // Space between the image and label
@@ -155,6 +161,9 @@ class EventDetailsView: UIView {
             
             labelHost.topAnchor.constraint(equalTo: imageIcon.bottomAnchor, constant: 12),
             labelHost.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            
+            buttonViewParticipants.widthAnchor.constraint(equalToConstant: 30),
+            buttonViewParticipants.heightAnchor.constraint(equalToConstant: 30),
             
             participantsStack.topAnchor.constraint(equalTo: labelHost.bottomAnchor, constant: 12),
             participantsStack.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),

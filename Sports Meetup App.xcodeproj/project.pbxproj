@@ -55,6 +55,9 @@
 		60A4DB212CF2E39A007A897E /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB202CF2E39A007A897E /* EventDetailsView.swift */; };
 		60A4DB242CF2E3C6007A897E /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB232CF2E3C6007A897E /* EventDetailsViewController.swift */; };
 		60A4DB262CF2FD0C007A897E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB252CF2FD0C007A897E /* User.swift */; };
+		60A4DB292D020152007A897E /* EventParticipantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB282D020152007A897E /* EventParticipantsViewController.swift */; };
+		60A4DB2B2D020161007A897E /* EventParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB2A2D020161007A897E /* EventParticipantsView.swift */; };
+		60A4DB2E2D0202DF007A897E /* ParticipantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB2D2D0202DF007A897E /* ParticipantTableViewCell.swift */; };
 		60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F32CC94EC800D4A616 /* AppDelegate.swift */; };
 		60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F52CC94EC800D4A616 /* SceneDelegate.swift */; };
 		60E187FB2CC94EC800D4A616 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 60E187FA2CC94EC800D4A616 /* Base */; };
@@ -108,6 +111,9 @@
 		60A4DB202CF2E39A007A897E /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		60A4DB232CF2E3C6007A897E /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		60A4DB252CF2FD0C007A897E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		60A4DB282D020152007A897E /* EventParticipantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsViewController.swift; sourceTree = "<group>"; };
+		60A4DB2A2D020161007A897E /* EventParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsView.swift; sourceTree = "<group>"; };
+		60A4DB2D2D0202DF007A897E /* ParticipantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewCell.swift; sourceTree = "<group>"; };
 		60E187F02CC94EC800D4A616 /* Sports Meetup App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Meetup App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E187F32CC94EC800D4A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E187F52CC94EC800D4A616 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -313,10 +319,29 @@
 		60A4DB1F2CF2E371007A897E /* Event Details Screen */ = {
 			isa = PBXGroup;
 			children = (
+				60A4DB272D020138007A897E /* Event Participants Screen */,
 				60A4DB202CF2E39A007A897E /* EventDetailsView.swift */,
 				60A4DB232CF2E3C6007A897E /* EventDetailsViewController.swift */,
 			);
 			path = "Event Details Screen";
+			sourceTree = "<group>";
+		};
+		60A4DB272D020138007A897E /* Event Participants Screen */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB2C2D0202B6007A897E /* Views */,
+				60A4DB282D020152007A897E /* EventParticipantsViewController.swift */,
+			);
+			path = "Event Participants Screen";
+			sourceTree = "<group>";
+		};
+		60A4DB2C2D0202B6007A897E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB2A2D020161007A897E /* EventParticipantsView.swift */,
+				60A4DB2D2D0202DF007A897E /* ParticipantTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		60E187E72CC94EC800D4A616 = {
@@ -450,6 +475,7 @@
 				32D0D0AC2CFF81F400FC9D25 /* ProfileEditView.swift in Sources */,
 				60A4DB102CED2EF7007A897E /* NewEventViewController.swift in Sources */,
 				32E7EA722CFAA32A0000479A /* ChatListTableViewManager.swift in Sources */,
+				60A4DB2B2D020161007A897E /* EventParticipantsView.swift in Sources */,
 				32D0D1042CFFA3B700FC9D25 /* ImagePickerManager.swift in Sources */,
 				322270C52D00CA670004572B /* UserTableView.swift in Sources */,
 				605E979A2CDABDD6006C5D6E /* LoginViewController.swift in Sources */,
@@ -473,6 +499,7 @@
 				32E7EA682CFA9ED80000479A /* ChatTableViewCell.swift in Sources */,
 				60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */,
 				60A4DAFE2CDBFC87007A897E /* ProfileViewController.swift in Sources */,
+				60A4DB292D020152007A897E /* EventParticipantsViewController.swift in Sources */,
 				32E7EA702CFAA0B20000479A /* ChatListViewController.swift in Sources */,
 				322270C92D00CA8B0004572B /* UserTableViewCell.swift in Sources */,
 				32E7EA6E2CFAA0370000479A /* ChatListView.swift in Sources */,
@@ -484,6 +511,7 @@
 				32E7EA5F2CFA9DDA0000479A /* NewMessageViewController.swift in Sources */,
 				32E7EA602CFA9DDA0000479A /* NewMessageTableViewManager.swift in Sources */,
 				32E7EA612CFA9DDA0000479A /* NewMessageView.swift in Sources */,
+				60A4DB2E2D0202DF007A897E /* ParticipantTableViewCell.swift in Sources */,
 				60A4DB002CDBFCA2007A897E /* ProfileView.swift in Sources */,
 				60A4DB242CF2E3C6007A897E /* EventDetailsViewController.swift in Sources */,
 				605E97A52CDAE724006C5D6E /* MainScreenView.swift in Sources */,

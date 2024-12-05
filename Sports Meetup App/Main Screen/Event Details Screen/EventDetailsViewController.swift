@@ -55,8 +55,16 @@ class EventDetailsViewController: UIViewController {
         
         setupDetailsView()
         
+        eventDetailsScreen.buttonViewParticipants.addTarget(self, action: #selector(onClickButtonViewParticipants), for: .touchUpInside)
+        
         let hostTapGesture = UITapGestureRecognizer(target: self, action: #selector(onHostLabelTapped))
         eventDetailsScreen.labelHost.addGestureRecognizer(hostTapGesture)
+    }
+    
+    @objc func onClickButtonViewParticipants() {
+        let participantsViewController = EventParticipantsViewController()
+        participantsViewController.participant_IDs = event.participants
+        navigationController?.pushViewController(participantsViewController, animated: true)
     }
     
     @objc func onHostLabelTapped() {
@@ -278,14 +286,14 @@ class EventDetailsViewController: UIViewController {
     }
 
     func setupDetailsView() {
-        Task{
+        Task {
             self.event = await getEventByID(eventID: event.id!)
         }
         
         eventDetailsScreen.labelEventName.text = event.eventName
         
         Task {
-            let thisUser = await getUserByID(userID: defaults.object(forKey: "userID") as! String)
+            let thisUser = await getUserByID(userID: event.hostID)
             eventDetailsScreen.labelHost.text = "Host: \(thisUser.name)"
         }
         
