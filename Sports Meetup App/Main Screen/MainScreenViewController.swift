@@ -11,10 +11,8 @@ import FirebaseFirestore
 
 class MainScreenViewController: UIViewController {
     
-    let mainScreen = MainScreenView()
-    
+    let mainScreen = MainScreenView()    
     let childProgressView = ProgressSpinnerViewController()
-    
     let database = Firestore.firestore()
     let notificationCenter = NotificationCenter.default
     
@@ -240,8 +238,7 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     // handle on click of cell
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
         let event = eventsForTableView[indexPath.row]
         
         let eventDetailsController = EventDetailsViewController()
@@ -252,7 +249,6 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         
         navigationController?.pushViewController(eventDetailsController, animated: true)
-        
     }
     
 }

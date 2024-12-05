@@ -16,7 +16,7 @@ class MainScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        
+       
         setupSearchBar()
         setupButtonFilterTableView()
         setupTableViewEvent()
@@ -41,15 +41,13 @@ class MainScreenView: UIView {
         buttonFilterTableView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(buttonFilterTableView)
     }
-    
+   
     func setupTableViewEvent() {
         tableViewEvents = UITableView()
         tableViewEvents.translatesAutoresizingMaskIntoConstraints = false
         tableViewEvents.register(TableViewEventCell.self, forCellReuseIdentifier: "events")
         self.addSubview(tableViewEvents)
-    }
-
-    
+    }    
     
     func initConstraints() {
         NSLayoutConstraint.activate([
