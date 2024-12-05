@@ -70,11 +70,6 @@ class ChatListViewController: UIViewController {
             }
         }
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        Auth.auth().removeStateDidChangeListener(handleAuth!)
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,21 +77,6 @@ class ChatListViewController: UIViewController {
         
         chatListView.tableViewChatRooms.delegate = self
         chatListView.tableViewChatRooms.dataSource = self
-    }
-    
-    @objc func onSignOutClicked() {
-        let logoutAlert = UIAlertController(title: "Logging out!", message: "Are you sure want to log out?", preferredStyle: .actionSheet)
-        logoutAlert.addAction(UIAlertAction(title: "Yes, log out!", style: .default, handler: {(_) in
-                do{
-                    try Auth.auth().signOut()
-                }catch{
-                    print("Error occured!")
-                }
-            })
-        )
-        logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-        self.present(logoutAlert, animated: true)
     }
     
     @objc func onNewMessageButtonClicked() {

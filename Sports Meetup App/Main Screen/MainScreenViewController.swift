@@ -5,18 +5,17 @@
 //  Created by Derek Thach on 11/6/24.
 //
 
-import FirebaseFirestore
-
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class MainScreenViewController: UIViewController {
     
     let mainScreen = MainScreenView()
-    
     let database = Firestore.firestore()
-    
     let notificationCenter = NotificationCenter.default
     
+    var currentUser: FirebaseAuth.User!
     // list of all events
     var events = [Event]()
     
@@ -160,18 +159,16 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource{
     
     // handle on click of cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let event = events[indexPath.row]
         
         let eventDetailsController = EventDetailsViewController()
+        eventDetailsController.currentUser = currentUser
         eventDetailsController.event = event
         
         // unhighlights cell after clicking
         tableView.deselectRow(at: indexPath, animated: true)
         
         navigationController?.pushViewController(eventDetailsController, animated: true)
-        
-        
     }
     
 }

@@ -75,8 +75,6 @@ class RegisterViewController: UIViewController {
         present(photoPicker, animated: true, completion: nil)
     }
     
-    
-    
     func showEmptyFields() {
         let alert = UIAlertController(title: "Error!", message: "Please fill out all the fields", preferredStyle: .alert)
         
@@ -208,7 +206,7 @@ class RegisterViewController: UIViewController {
             "name": registerScreen.textFieldName.text!,
             "bio": "",
             "followers": [],
-            "followings" : [],
+            "following" : [],
             "level": 1,
             "exp": 0,
             "eventsFinished": []
@@ -241,10 +239,8 @@ class RegisterViewController: UIViewController {
         else {
             showActivityIndicator()
             uploadProfilePhotoToStorage()
-            
         }
     }
-    
 }
 
 extension RegisterViewController:ProgressSpinnerDelegate{
@@ -260,8 +256,6 @@ extension RegisterViewController:ProgressSpinnerDelegate{
         childProgressView.removeFromParent()
     }
 }
-
-
 
 //MARK: adopting required protocols for PHPicker...
 extension RegisterViewController:PHPickerViewControllerDelegate {
@@ -288,7 +282,6 @@ extension RegisterViewController:PHPickerViewControllerDelegate {
         }
     }
 }
-
 
 //MARK: adopting required protocols for UIImagePicker...
 extension RegisterViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{

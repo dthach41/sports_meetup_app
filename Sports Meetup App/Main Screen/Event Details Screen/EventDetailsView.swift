@@ -41,8 +41,6 @@ class EventDetailsView: UIView {
         initConstraints()
     }
     
-   
-    
     func setupImageIcon() {
         let image = UIImage(systemName: "figure.run.circle.fill")
         imageIcon = UIImageView(image: image!)
@@ -61,6 +59,7 @@ class EventDetailsView: UIView {
     func setupLabelHost() {
         labelHost = UILabel()
         labelHost.text = "Host: "
+        labelHost.isUserInteractionEnabled = true
         labelHost.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelHost)
     }
