@@ -14,9 +14,9 @@ struct User: Codable {
     var profilePic: String
     var phone: String
     var name: String
-    var bio: String
+    var bio: String 
     var followers: [String]
-    var followings: [String]
+    var following: [String]
     var level: Int
     var exp: Int
     var eventsFinished: [String]
@@ -30,7 +30,7 @@ struct User: Codable {
         self.name = ""
         self.bio = ""
         self.followers = []
-        self.followings = []
+        self.following = []
         self.level = 0
         self.exp = 0
         self.eventsFinished = []
@@ -44,7 +44,7 @@ struct User: Codable {
         self.name = name
         self.bio = ""
         self.followers = []
-        self.followings = []
+        self.following = []
         self.level = 1
         self.exp = 0
         self.eventsFinished = []

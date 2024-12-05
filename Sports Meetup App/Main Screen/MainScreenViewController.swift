@@ -5,18 +5,20 @@
 //  Created by Derek Thach on 11/6/24.
 //
 
-import FirebaseFirestore
-
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class MainScreenViewController: UIViewController {
     
     let mainScreen = MainScreenView()
     
-    let database = Firestore.firestore()
+    let childProgressView = ProgressSpinnerViewController()
     
+    let database = Firestore.firestore()
     let notificationCenter = NotificationCenter.default
     
+    var currentUser: FirebaseAuth.User!
     // list of all events
     var eventsDatabase = [Event]()
     
@@ -48,7 +50,9 @@ class MainScreenViewController: UIViewController {
         mainScreen.tableViewEvents.separatorStyle = .none
 
         Task {
+            showActivityIndicator()
             await getAllEventsFromFirestore()
+            hideActivityIndicator()
         }
 
         // Do any additional setup after loading the view.
@@ -61,8 +65,10 @@ class MainScreenViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = newEventButton
         
         mainScreen.buttonFilterTableView.menu = getSportTypes()
+
         
     }
+    
     
     // updates events tableview for new event
     @objc func notificationReceivedUpdateMainScreen(notification: Notification) {
@@ -76,6 +82,7 @@ class MainScreenViewController: UIViewController {
         let newEventViewController = NewEventViewController()
         navigationController?.pushViewController(newEventViewController, animated: true)
     }
+    
     
     
     // gets all events from Firestore and update events list and view
@@ -106,6 +113,7 @@ class MainScreenViewController: UIViewController {
             let document = try await docRef.getDocument()
             if document.exists {
                 let user = try document.data(as: User.self)
+                
                 return user
             } else {
                 print("Document does not exist")
@@ -127,12 +135,36 @@ class MainScreenViewController: UIViewController {
                 handler: { _ in
                     self.selectedSport = type
                     self.mainScreen.buttonFilterTableView.menu = self.getSportTypes()
+                    self.updateFilteredEventsForTableView(sport: self.selectedSport)
                 }
             )
             menuItems.append(menuItem)
         }
 
         return UIMenu(title: "Filter by sport:", children: menuItems)
+    }
+    
+
+    
+    func updateFilteredEventsForTableView(sport: String) {
+        switch sport {
+        case "Basketball":
+            self.eventsForTableView = self.eventsDatabase.filter { $0.sport == "Basketball" }
+        case "Soccer":
+            self.eventsForTableView = self.eventsDatabase.filter { $0.sport == "Soccer" }
+        case "Football":
+            self.eventsForTableView = self.eventsDatabase.filter { $0.sport == "Football" }
+        case "Tennis":
+            self.eventsForTableView = self.eventsDatabase.filter { $0.sport == "Tennis" }
+        case "None":
+            self.eventsForTableView = self.eventsDatabase
+        default:
+            self.eventsForTableView = self.eventsDatabase // Default to showing all items
+        }
+        
+        
+        // Reload your UI component (e.g., a UITableView or UICollectionView)
+        self.mainScreen.tableViewEvents.reloadData()
     }
     
 
@@ -144,7 +176,7 @@ extension MainScreenViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == ""{
             eventsForTableView = eventsDatabase
-        }else{
+        }else {
             self.eventsForTableView.removeAll()
 
             for event in eventsDatabase{
@@ -213,6 +245,7 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource{
         let event = eventsForTableView[indexPath.row]
         
         let eventDetailsController = EventDetailsViewController()
+        eventDetailsController.currentUser = currentUser
         eventDetailsController.event = event
         
         // unhighlights cell after clicking
@@ -222,4 +255,18 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+}
+
+extension MainScreenViewController:ProgressSpinnerDelegate{
+    func showActivityIndicator(){
+        addChild(childProgressView)
+        view.addSubview(childProgressView.view)
+        childProgressView.didMove(toParent: self)
+    }
+    
+    func hideActivityIndicator(){
+        childProgressView.willMove(toParent: nil)
+        childProgressView.view.removeFromSuperview()
+        childProgressView.removeFromParent()
+    }
 }

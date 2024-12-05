@@ -6,37 +6,30 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 import FirebaseFirestore
 
 class EventDetailsViewController: UIViewController {
     
     let eventDetailsScreen = EventDetailsView()
-    
+    let database = Firestore.firestore()
     let childProgressView = ProgressSpinnerViewController()
-    
     let notificationCenter = NotificationCenter.default
-    
     let defaults = UserDefaults.standard
     
+    var currentUser: FirebaseAuth.User!
     var event: Event!
-    
     var joined: Bool!
-    
-    let database = Firestore.firestore()
     
     override func loadView() {
         view = eventDetailsScreen
-        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Task {
             self.event = await getEventByID(eventID: event.id!)
         }
-        
         
         if (event.hostID == defaults.object(forKey: "userID") as! String) {
             joined = true
@@ -48,10 +41,8 @@ class EventDetailsViewController: UIViewController {
             deleteButton.tintColor = .red
             
             self.navigationItem.rightBarButtonItem = deleteButton
-            
             eventDetailsScreen.buttonEndEvent.isHidden = false
         }
-        
         
         if (event.participants.contains(defaults.object(forKey: "userID") as! String)) {
             self.joined = true
@@ -60,12 +51,28 @@ class EventDetailsViewController: UIViewController {
         }
         
         eventDetailsScreen.buttonJoin.addTarget(self, action: #selector(onClickButtonJoin), for: .touchUpInside)
-        
         eventDetailsScreen.buttonEndEvent.addTarget(self, action: #selector(onClickButtonEndEvent), for: .touchUpInside)
         
         setupDetailsView()
+        
+        eventDetailsScreen.buttonViewParticipants.addTarget(self, action: #selector(onClickButtonViewParticipants), for: .touchUpInside)
+        
+        let hostTapGesture = UITapGestureRecognizer(target: self, action: #selector(onHostLabelTapped))
+        eventDetailsScreen.labelHost.addGestureRecognizer(hostTapGesture)
     }
     
+    @objc func onClickButtonViewParticipants() {
+        let participantsViewController = EventParticipantsViewController()
+        participantsViewController.participant_IDs = event.participants
+        navigationController?.pushViewController(participantsViewController, animated: true)
+    }
+    
+    @objc func onHostLabelTapped() {
+        let profileViewController = ProfileViewController()
+        profileViewController.currentUser = currentUser
+        profileViewController.userUID = event.hostID
+        navigationController?.pushViewController(profileViewController, animated: true)
+    }
     
     // gets a event document by eventID and returns Event
     func getEventByID(eventID: String) async -> Event {
@@ -82,7 +89,6 @@ class EventDetailsViewController: UIViewController {
         } catch {
           print("Error getting documents: \(error)")
         }
-        
         return Event()
     }
     
@@ -95,7 +101,6 @@ class EventDetailsViewController: UIViewController {
                 self.showActivityIndicator()
                 await self.deleteEventFromFirestore()
             }
-            
         })
         alert.addAction(deleteAction)
 
@@ -110,7 +115,6 @@ class EventDetailsViewController: UIViewController {
         showConfirmDeleteAlert()
     }
     
-    
     func showConfirmEventFinished() {
         let alert = UIAlertController(title: "Confirm Event Finished", message: "This event will be deleted, and you will be awarded your EXP", preferredStyle: .alert)
 
@@ -119,10 +123,7 @@ class EventDetailsViewController: UIViewController {
                 self.showActivityIndicator()
                 self.updateEventFinishedForUsers()
                 await self.deleteEventFromFirestore()
-                
-                
             }
-            
         })
         alert.addAction(deleteAction)
 
@@ -132,7 +133,6 @@ class EventDetailsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-
     // updates the exp points, level and eventsFinished for all users who participated
     func updateEventFinishedForUsers() {
         for participantId in event.participants {
@@ -184,7 +184,6 @@ class EventDetailsViewController: UIViewController {
         showConfirmEventFinished()
     }
     
-    
     // deletes event from Firestore
     func deleteEventFromFirestore() async {
         do {
@@ -199,9 +198,6 @@ class EventDetailsViewController: UIViewController {
             print("Error removing document: \(error)")
         }
     }
-    
-    
-    
     
     // remove this user from event's participant list
     @objc func onClickButtonJoin() {
@@ -222,8 +218,6 @@ class EventDetailsViewController: UIViewController {
         self.joined = !self.joined!
         setupDetailsView()
     }
-    
-    
     
     func removeThisUserFromEvent() {
         let docRef = database.collection("events").document(event.id!)
@@ -249,8 +243,6 @@ class EventDetailsViewController: UIViewController {
         
         hideActivityIndicator()
     }
-    
-
     
     func addThisUserToEvent() {
         let docRef = database.collection("events").document(event.id!)
@@ -292,17 +284,16 @@ class EventDetailsViewController: UIViewController {
         
         return User()
     }
-    
 
     func setupDetailsView() {
-        Task{
+        Task {
             self.event = await getEventByID(eventID: event.id!)
         }
         
         eventDetailsScreen.labelEventName.text = event.eventName
         
         Task {
-            let thisUser = await getUserByID(userID: defaults.object(forKey: "userID") as! String)
+            let thisUser = await getUserByID(userID: event.hostID)
             eventDetailsScreen.labelHost.text = "Host: \(thisUser.name)"
         }
         
@@ -338,7 +329,6 @@ class EventDetailsViewController: UIViewController {
         
         eventDetailsScreen.imageIcon.image = image
 
-        
         if (joined) {
             eventDetailsScreen.buttonJoin.setTitle("Joined", for: .normal)
             eventDetailsScreen.buttonJoin.setTitleColor(.black, for: .normal)
@@ -352,7 +342,6 @@ class EventDetailsViewController: UIViewController {
     }
 
 }
-
 
 extension EventDetailsViewController:ProgressSpinnerDelegate{
     func showActivityIndicator(){

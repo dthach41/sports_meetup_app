@@ -248,14 +248,11 @@ class RegisterView: UIView {
             textfieldConfirmPassword.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor, constant: 48),
             textfieldConfirmPassword.trailingAnchor.constraint(equalTo: contentWrapper.trailingAnchor, constant: -48),
             
-            
             buttonRegister.topAnchor.constraint(equalTo: textfieldConfirmPassword.bottomAnchor, constant: 24),
             buttonRegister.leadingAnchor.constraint(equalTo: contentWrapper.leadingAnchor, constant: 120),
             buttonRegister.trailingAnchor.constraint(equalTo: contentWrapper.trailingAnchor, constant: -120),
             buttonRegister.heightAnchor.constraint(equalToConstant: 40),
             buttonRegister.bottomAnchor.constraint(equalTo: contentWrapper.bottomAnchor, constant: -16)
-            
-            
         ])
     }
     
