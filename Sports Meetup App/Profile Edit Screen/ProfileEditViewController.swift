@@ -24,6 +24,11 @@ class ProfileEditViewController: UIViewController {
         view = profileEditView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setProfileFields()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerManager = ImagePickerManager(viewController: self)

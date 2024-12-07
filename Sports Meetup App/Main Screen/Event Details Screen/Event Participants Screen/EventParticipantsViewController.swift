@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseFirestore
 
 class EventParticipantsViewController: UIViewController {
@@ -98,8 +99,6 @@ extension EventParticipantsViewController: UITableViewDelegate, UITableViewDataS
         Task {
             let user = await self.getUserByID(userID: participants[indexPath.row].id!)
             cell.labelName.text = "\(user.name)"
-        
-            
         }
     
         return cell
@@ -107,16 +106,13 @@ extension EventParticipantsViewController: UITableViewDelegate, UITableViewDataS
     
     // handle on click of cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let clickedUserID = participants[indexPath.row]
-
-        // unhighlights cell after clicking
-        tableView.deselectRow(at: indexPath, animated: true)
-        
+        let profileViewController = ProfileViewController()
+        profileViewController.currentUser = Auth.auth().currentUser
+        profileViewController.userUID = clickedUserID.id
+        navigationController?.pushViewController(profileViewController, animated: true)
     }
-    
 }
-
 
 extension EventParticipantsViewController:ProgressSpinnerDelegate{
     func showActivityIndicator() {

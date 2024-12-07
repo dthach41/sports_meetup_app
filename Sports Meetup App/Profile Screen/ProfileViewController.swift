@@ -31,13 +31,15 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let logoutBarButton = UIBarButtonItem(
-            image: UIImage(systemName: "rectangle.portrait.and.arrow.right"),
-            style: .plain,
-            target: self,
-            action: #selector(onClickLogoutBarItem))
-        
-        self.navigationItem.leftBarButtonItem = logoutBarButton
+        if userUID == currentUser?.uid {
+            let logoutBarButton = UIBarButtonItem(
+                image: UIImage(systemName: "rectangle.portrait.and.arrow.right"),
+                style: .plain,
+                target: self,
+                action: #selector(onClickLogoutBarItem))
+            
+            self.navigationItem.leftBarButtonItem = logoutBarButton
+        }
         
         profileScreen.buttonEdit.addTarget(self, action: #selector(onButtonEditClicked), for: .touchUpInside)
         profileScreen.buttonFollow.addTarget(self, action: #selector(onButtonFollowClicked), for: .touchUpInside)
