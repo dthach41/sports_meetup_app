@@ -51,8 +51,6 @@ class NewMessageViewController: UIViewController {
     
     override func loadView() {
         view = newMessageScreen
-        
-        hideKeyboardOnTapOutside()
     }
     
     override func viewDidLoad() {
@@ -94,6 +92,51 @@ class NewMessageViewController: UIViewController {
                     }
                 }
         }
+    }
+    
+    func checkForChat(selectedUser: User) {
+        showActivityIndicator()
+        guard let selectedUserUID = selectedUser.id else { return }
+        let chatID = getChatIDForUsers(userIds: [self.currentUser.uid, selectedUserUID])
+    
+        database.collection("chats")
+            .document(chatID)
+            .getDocument { document, error in
+                self.hideActivityIndicator()
+                
+                if let error = error {
+                    self.showErrorAlert(errorText: "Error fetching chat: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let document = document, document.exists {
+                    self.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    self.createNewChat(for: selectedUser, chatID: chatID)
+                }
+            }
+
+    }
+    
+    func createNewChat(for user: User, chatID: String) {
+        let chatData = [
+            "participantNames": [currentUser.displayName ?? "", user.name],
+            "participants": [self.currentUser.uid, user.id],
+            "lastMessage": nil,
+            "lastMessageTime": nil
+        ]
+        
+        database.collection("chats")
+            .document(chatID)
+            .setData(chatData) { error in
+                self.hideActivityIndicator()
+                
+                if let error = error {
+                    self.showErrorAlert(errorText: "Failed to create chat: \(error.localizedDescription)")
+                    return
+                }
+                self.navigationController?.popToRootViewController(animated: true)
+            }
     }
     
     func getChatIDForUsers(userIds: [String]) -> String {

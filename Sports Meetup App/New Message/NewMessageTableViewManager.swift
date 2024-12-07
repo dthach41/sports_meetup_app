@@ -24,26 +24,6 @@ extension NewMessageViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedUser = users[indexPath.row]
-        if let selectedUserUID = selectedUser.id {
-            let chatID = getChatIDForUsers(userIds: [self.currentUser.uid, selectedUserUID])
-            self.database
-                .collection("chats")
-                .document(chatID)
-                .getDocument { document, error in
-                    if let error = error {
-                        print("Error fetching chat document: \(error)")
-                        return
-                    }
-                    
-                    if let document = document, document.exists {
-                        self.navigationController?.popToRootViewController(animated: true)
-                    } else {
-                        self.showActivityIndicator()
-                        self.otherUser = selectedUser
-                        self.addChatToFirestore()
-                        self.navigationController?.popToRootViewController(animated: true)
-                    }
-                }
-        }
+        checkForChat(selectedUser: selectedUser)
     }
 }

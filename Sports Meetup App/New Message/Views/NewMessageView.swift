@@ -32,6 +32,7 @@ class NewMessageView: UIView {
     
     func setupTableViewSearchResults() {
         tableViewSearchResults = UITableView()
+        tableViewSearchResults.delaysContentTouches = false
         tableViewSearchResults.register(SearchTableViewCell.self, forCellReuseIdentifier: Configs.tableViewSearchResults)
         tableViewSearchResults.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(tableViewSearchResults)
