@@ -45,6 +45,27 @@ class NewEventViewController: UIViewController {
             action: #selector(onClickCreateEvent))
         
         self.navigationItem.rightBarButtonItem = buttonCreateEvent
+        
+        newEventScreen.buttonOpenMap.addTarget(self, action: #selector(onClickButtonSelectLocation), for: .touchUpInside)
+        
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(notificationReceivedForNewEventAddresss(notification:)),
+            name: .addressForNewEvent,
+            object: nil)
+    }
+    
+    // updates the address field
+    @objc func notificationReceivedForNewEventAddresss(notification: Notification) {
+        let currAddress = notification.object as! String
+        
+        newEventScreen.buttonOpenMap.setTitle(currAddress, for: .normal)
+        
+    }
+    
+    @objc func onClickButtonSelectLocation() {
+        let mapViewController = MapViewController()
+        navigationController?.pushViewController(mapViewController, animated: true)
     }
     
     func showEmptyField() {
@@ -63,9 +84,10 @@ class NewEventViewController: UIViewController {
         let participants = [hostid]
         let creationDate = Date()
         let eventDate = newEventScreen.datePickerEventDate.date
-        let address = newEventScreen.textFieldAddress.text!
+        let address = newEventScreen.buttonOpenMap.titleLabel!.text!
         
-        if eventName.isEmpty || sport.isEmpty || address.isEmpty || details.isEmpty {
+        
+        if eventName.isEmpty || sport.isEmpty || address == "Select Location" || details.isEmpty {
             showEmptyField()
         } else {
             let newEvent = Event(eventName: eventName, details: details, sport: sport,

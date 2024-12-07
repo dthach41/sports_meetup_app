@@ -16,4 +16,7 @@ class Configs {
     static let tableViewChatsID = "tableViewChatsID"
     static let tableViewSearchResults = "tableViewSearchResults"
     static let tableViewSearchUserResults = "tableViewSearchUserResults"
+    
+    static let searchTableViewID = "searchTableViewID"
+    
 }

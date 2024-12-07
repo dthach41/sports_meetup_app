@@ -9,4 +9,9 @@ import Foundation
 
 extension Notification.Name {
     static let updateMainScreen = Notification.Name("updateMainScreen")
+    
+    static let placesFromMap = Notification.Name("placesFromMap")
+    
+    static let addressForNewEvent = Notification.Name("addressForNewEvent")
+    
 }

@@ -81,7 +81,6 @@ class EventDetailsViewController: UIViewController {
             let document = try await docRef.getDocument()
             if document.exists {
                 let event = try document.data(as: Event.self)
-                print(event)
                 return event
             } else {
                 print("Document does not exist")

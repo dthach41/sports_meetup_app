@@ -12,7 +12,7 @@ class NewEventView: UIView {
     var textFieldEventName: UITextField!
     var datePickerEventDate: UIDatePicker!
     var buttonSelectSportMenu: UIButton!
-    var textFieldAddress: UITextField!
+    var buttonOpenMap: UIButton!
     var labelDetails: UILabel!
     var textViewDetails: UITextView!
     
@@ -23,7 +23,7 @@ class NewEventView: UIView {
         setupTextFieldEventName()
         setupDatePickerEventDate()
         setupButtonSelectSportMenu()
-        setupTextFieldAddress()
+        setupButtonOpenMap()
         setupLabelDetails()
         setupTextViewDetails()
         
@@ -58,15 +58,12 @@ class NewEventView: UIView {
         self.addSubview(buttonSelectSportMenu)
     }
     
-    func setupTextFieldAddress() {
-        textFieldAddress = UITextField()
-        textFieldAddress.placeholder = "Enter address of event..."
-        textFieldAddress.borderStyle = .roundedRect
-        textFieldAddress.layer.borderWidth = 0.5
-        textFieldAddress.autocapitalizationType = .none
-        textFieldAddress.autocorrectionType = .no
-        textFieldAddress.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(textFieldAddress)
+    
+    func setupButtonOpenMap() {
+        buttonOpenMap = UIButton(type: .system)
+        buttonOpenMap.setTitle("Select Location", for: .normal)
+        buttonOpenMap.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(buttonOpenMap)
     }
     
     func setupLabelDetails() {
@@ -103,13 +100,11 @@ class NewEventView: UIView {
             buttonSelectSportMenu.topAnchor.constraint(equalTo: datePickerEventDate.bottomAnchor, constant: 16),
             buttonSelectSportMenu.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             
-            textFieldAddress.topAnchor.constraint(equalTo: buttonSelectSportMenu.bottomAnchor, constant: 16),
-            textFieldAddress.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            textFieldAddress.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            textFieldAddress.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24),
+            buttonOpenMap.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            buttonOpenMap.topAnchor.constraint(equalTo: buttonSelectSportMenu.bottomAnchor, constant: 16),
             
-            labelDetails.topAnchor.constraint(equalTo: textFieldAddress.bottomAnchor, constant: 16),
-            labelDetails.leadingAnchor.constraint(equalTo: textFieldAddress.leadingAnchor),
+            labelDetails.topAnchor.constraint(equalTo: buttonOpenMap.bottomAnchor, constant: 16),
+            labelDetails.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             
             textViewDetails.topAnchor.constraint(equalTo: labelDetails.bottomAnchor, constant: 16),
             textViewDetails.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -32),

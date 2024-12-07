@@ -58,6 +58,14 @@
 		60A4DB292D020152007A897E /* EventParticipantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB282D020152007A897E /* EventParticipantsViewController.swift */; };
 		60A4DB2B2D020161007A897E /* EventParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB2A2D020161007A897E /* EventParticipantsView.swift */; };
 		60A4DB2E2D0202DF007A897E /* ParticipantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB2D2D0202DF007A897E /* ParticipantTableViewCell.swift */; };
+		60A4DB312D04BFD8007A897E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB302D04BFD8007A897E /* MapView.swift */; };
+		60A4DB332D04BFE8007A897E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB322D04BFE8007A897E /* MapViewController.swift */; };
+		60A4DB352D04C05D007A897E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB342D04C05D007A897E /* LocationManager.swift */; };
+		60A4DB372D04D0F8007A897E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB362D04D0F8007A897E /* SearchViewController.swift */; };
+		60A4DB3A2D04D138007A897E /* SearchBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB392D04D138007A897E /* SearchBottomSheet.swift */; };
+		60A4DB3C2D04D15F007A897E /* MapSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB3B2D04D15F007A897E /* MapSearchTableViewCell.swift */; };
+		60A4DB3E2D04D2D8007A897E /* LoadPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB3D2D04D2D8007A897E /* LoadPlaces.swift */; };
+		60A4DB422D04DA5B007A897E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A4DB412D04DA5B007A897E /* Place.swift */; };
 		60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F32CC94EC800D4A616 /* AppDelegate.swift */; };
 		60E187F62CC94EC800D4A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E187F52CC94EC800D4A616 /* SceneDelegate.swift */; };
 		60E187FB2CC94EC800D4A616 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 60E187FA2CC94EC800D4A616 /* Base */; };
@@ -114,6 +122,14 @@
 		60A4DB282D020152007A897E /* EventParticipantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsViewController.swift; sourceTree = "<group>"; };
 		60A4DB2A2D020161007A897E /* EventParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantsView.swift; sourceTree = "<group>"; };
 		60A4DB2D2D0202DF007A897E /* ParticipantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewCell.swift; sourceTree = "<group>"; };
+		60A4DB302D04BFD8007A897E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		60A4DB322D04BFE8007A897E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		60A4DB342D04C05D007A897E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		60A4DB362D04D0F8007A897E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		60A4DB392D04D138007A897E /* SearchBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBottomSheet.swift; sourceTree = "<group>"; };
+		60A4DB3B2D04D15F007A897E /* MapSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewCell.swift; sourceTree = "<group>"; };
+		60A4DB3D2D04D2D8007A897E /* LoadPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPlaces.swift; sourceTree = "<group>"; };
+		60A4DB412D04DA5B007A897E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		60E187F02CC94EC800D4A616 /* Sports Meetup App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Meetup App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E187F32CC94EC800D4A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E187F52CC94EC800D4A616 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +328,7 @@
 				32E7EA622CFA9DDF0000479A /* Chat.swift */,
 				60A4DB142CED30B0007A897E /* Event.swift */,
 				60A4DB252CF2FD0C007A897E /* User.swift */,
+				60A4DB412D04DA5B007A897E /* Place.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -319,9 +336,9 @@
 		60A4DB1F2CF2E371007A897E /* Event Details Screen */ = {
 			isa = PBXGroup;
 			children = (
-				60A4DB272D020138007A897E /* Event Participants Screen */,
 				60A4DB202CF2E39A007A897E /* EventDetailsView.swift */,
 				60A4DB232CF2E3C6007A897E /* EventDetailsViewController.swift */,
+				60A4DB272D020138007A897E /* Event Participants Screen */,
 			);
 			path = "Event Details Screen";
 			sourceTree = "<group>";
@@ -340,6 +357,44 @@
 			children = (
 				60A4DB2A2D020161007A897E /* EventParticipantsView.swift */,
 				60A4DB2D2D0202DF007A897E /* ParticipantTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60A4DB2F2D04BFBD007A897E /* Map Screen */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB3F2D04D69E007A897E /* Place Search Bottom Sheet */,
+				60A4DB382D04D122007A897E /* Views */,
+				60A4DB322D04BFE8007A897E /* MapViewController.swift */,
+				60A4DB342D04C05D007A897E /* LocationManager.swift */,
+			);
+			path = "Map Screen";
+			sourceTree = "<group>";
+		};
+		60A4DB382D04D122007A897E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB302D04BFD8007A897E /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60A4DB3F2D04D69E007A897E /* Place Search Bottom Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB402D04D6AB007A897E /* Views */,
+				60A4DB362D04D0F8007A897E /* SearchViewController.swift */,
+				60A4DB3D2D04D2D8007A897E /* LoadPlaces.swift */,
+			);
+			path = "Place Search Bottom Sheet";
+			sourceTree = "<group>";
+		};
+		60A4DB402D04D6AB007A897E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60A4DB392D04D138007A897E /* SearchBottomSheet.swift */,
+				60A4DB3B2D04D15F007A897E /* MapSearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,6 +432,7 @@
 				605E97AB2CDAE802006C5D6E /* Progress Indicator */,
 				605E97A62CDAE7B0006C5D6E /* Register Screen */,
 				605E97942CDABDAB006C5D6E /* Login Screen */,
+				60A4DB2F2D04BFBD007A897E /* Map Screen */,
 				605E978F2CDABD52006C5D6E /* Main Screen */,
 				60A4DB0E2CED2EC8007A897E /* New Event Screen */,
 				60E187F32CC94EC800D4A616 /* AppDelegate.swift */,
@@ -474,6 +530,7 @@
 				605E97AA2CDAE7D1006C5D6E /* RegisterViewController.swift in Sources */,
 				32D0D0AC2CFF81F400FC9D25 /* ProfileEditView.swift in Sources */,
 				60A4DB102CED2EF7007A897E /* NewEventViewController.swift in Sources */,
+				60A4DB3C2D04D15F007A897E /* MapSearchTableViewCell.swift in Sources */,
 				32E7EA722CFAA32A0000479A /* ChatListTableViewManager.swift in Sources */,
 				60A4DB2B2D020161007A897E /* EventParticipantsView.swift in Sources */,
 				32D0D1042CFFA3B700FC9D25 /* ImagePickerManager.swift in Sources */,
@@ -482,10 +539,12 @@
 				605E97912CDABD65006C5D6E /* ViewController.swift in Sources */,
 				60A4DB0D2CDC0C7C007A897E /* MainScreenViewController.swift in Sources */,
 				60A4DB122CED2F05007A897E /* NewEventView.swift in Sources */,
+				60A4DB352D04C05D007A897E /* LocationManager.swift in Sources */,
 				60E187F42CC94EC800D4A616 /* AppDelegate.swift in Sources */,
 				32E7EA522CFA9DD10000479A /* ChatView.swift in Sources */,
 				32E7EA532CFA9DD10000479A /* SenderTableViewCell.swift in Sources */,
 				32E7EA542CFA9DD10000479A /* ChatProgressIndicatorManager.swift in Sources */,
+				60A4DB332D04BFE8007A897E /* MapViewController.swift in Sources */,
 				32E7EA552CFA9DD10000479A /* ChatTableViewManager.swift in Sources */,
 				32E7EA562CFA9DD10000479A /* ReceiverTableViewCell.swift in Sources */,
 				32D0D1302CFFADA900FC9D25 /* ImageViewUtils.swift in Sources */,
@@ -502,11 +561,15 @@
 				60A4DB292D020152007A897E /* EventParticipantsViewController.swift in Sources */,
 				32E7EA702CFAA0B20000479A /* ChatListViewController.swift in Sources */,
 				322270C92D00CA8B0004572B /* UserTableViewCell.swift in Sources */,
+				60A4DB3E2D04D2D8007A897E /* LoadPlaces.swift in Sources */,
 				32E7EA6E2CFAA0370000479A /* ChatListView.swift in Sources */,
 				60A4DB1C2CF290D8007A897E /* TableViewEventCell.swift in Sources */,
 				605E979C2CDABDE6006C5D6E /* LoginView.swift in Sources */,
+				60A4DB422D04DA5B007A897E /* Place.swift in Sources */,
 				60A4DB1E2CF29776007A897E /* NotificationNames.swift in Sources */,
 				32E7EA5E2CFA9DDA0000479A /* SearchTableViewCell.swift in Sources */,
+				60A4DB372D04D0F8007A897E /* SearchViewController.swift in Sources */,
+				60A4DB312D04BFD8007A897E /* MapView.swift in Sources */,
 				32E7EA652CFA9DE30000479A /* Message.swift in Sources */,
 				32E7EA5F2CFA9DDA0000479A /* NewMessageViewController.swift in Sources */,
 				32E7EA602CFA9DDA0000479A /* NewMessageTableViewManager.swift in Sources */,
@@ -516,6 +579,7 @@
 				60A4DB242CF2E3C6007A897E /* EventDetailsViewController.swift in Sources */,
 				605E97A52CDAE724006C5D6E /* MainScreenView.swift in Sources */,
 				322270C72D00CA740004572B /* UserTableViewController.swift in Sources */,
+				60A4DB3A2D04D138007A897E /* SearchBottomSheet.swift in Sources */,
 				60A4DB262CF2FD0C007A897E /* User.swift in Sources */,
 				32D0D0AA2CFF81E700FC9D25 /* ProfileEditViewController.swift in Sources */,
 				32E7EA6C2CFA9FDD0000479A /* Configs.swift in Sources */,

@@ -52,6 +52,7 @@ class MainScreenViewController: UIViewController {
             await getAllEventsFromFirestore()
             hideActivityIndicator()
         }
+        
 
         // Do any additional setup after loading the view.
         let newEventButton = UIBarButtonItem(
